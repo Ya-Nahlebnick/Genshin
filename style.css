@@ -1,0 +1,1157 @@
+html {
+    scroll-behavior: smooth;
+}
+main, footer {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Regular'), local('OpenSans-Regular'),
+    url('font/OpenSans-Regular.woff2') format('woff2'),
+    url('font/OpenSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Light'), local('OpenSans-Light'),
+    url('font/OpenSans-Light.woff2') format('woff2'),
+    url('font/OpenSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+    url('font/OpenSans-SemiBold.woff2') format('woff2'),
+    url('font/OpenSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+.flex {
+    display: flex;
+}
+/* Основные стили */
+body {
+    margin: 0;
+    background-color: #fff;
+   
+   
+}
+
+.initial  {
+    
+    height: 100vh;      /* Высота на 100% от высоты окна */
+    background-image: url(assets/images/anm9736.jpg);
+    background-size: cover;
+    background-position: center; /* Центрирование фона для лучшего отображения */
+}
+
+.bx-win:root, .bx-win body {
+    --ui-font-weight-bold: 600;
+    --ui-font-weight-medium: 600;
+}
+
+
+
+/* Убираем подчеркивание у всех ссылок */
+a {
+    text-decoration: none; /* Убирает подчеркивание */
+}
+
+/* Сетка тир-листа */
+.tier-list {
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tier-header {
+    background-color: #3a3a5f;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffcc00;
+    border-radius: 5px;
+}
+
+.tier-label {
+    background-color: #3a3a5f;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffcc00;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tier-row {
+    background-color: #2a2a40;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 80px;
+}
+
+.character-card {
+    background-color: #3a3a5f;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 80px;
+    height: 85px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.character-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+.character-card h2 {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #ffffff;
+   
+}
+
+h2 {
+    margin: 0;
+}
+
+header {
+    background-color: #fff; /* Цвет фона хедера */
+    width: 100%;              /* Занимает всю ширину экрана */
+    position: fixed;          /* Фиксированное позиционирование */
+    top: 0;                  /* Прилипает к верху экрана */
+    left: 0;                 /* Прилипает к левому краю экрана */
+    z-index: 1000;           /* Обеспечивает отображение хедера поверх другого контента */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляет небольшую тень */
+}
+.header-nav {
+    background-color: #fff; /* Цвет фона навигации */
+    padding: 15px 15px; /* Отступы сверху и снизу */
+    
+    
+}
+
+section {
+    scroll-margin-top: 58px; /* Замените 70px на высоту вашего фиксированного меню */
+    /* Другие стили для секций */
+}
+
+  
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1110px;
+    margin: 0 auto; /* Центрируем по горизонтали */
+    padding: 5px 5px;
+    box-sizing: border-box; /*  чтобы отступы не увеличивали размер */
+}
+
+.header-list {
+    list-style: none; /* Убираем стандартные маркеры списка */
+    display: flex; /* Размещаем элементы в строку */
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    padding: 0; /* Убираем отступы у списка */
+    margin: 0; /* Убираем отступы у списка */
+}
+
+.header-list-item {
+    margin: 0 15px; /* Задаем отступы между элементами навигации */
+}
+
+.header-link {
+    color: #007bff; /* Цвет текста ссылки */
+    font-size: 0.7rem; /* Размер шрифта */
+    font-family: 'Open Sans';
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease; /* Плавный переход цвета и трансформации */
+    text-decoration: none; /* Убираем подчеркивание */
+    display: inline-block; /* Позволяет трансформации работать корректно */
+    
+}
+
+.header-link:hover {
+    color: #004da0; /* Цвет при наведении */
+    
+}
+
+.logo{
+    display: flex;
+}
+
+.logo-image {
+    width: 200px;
+}
+
+.initial {
+    height: 100vh;                        /* Занимаем всю высоту экрана для секции */
+    display: flex;                        /* Используем flexbox для центрирования */
+    justify-content: center;              /* Центрируем содержимое по вертикали */
+    align-items: center;                  /* Центрируем содержимое по горизонтали */
+    text-align: center;                   /* Выравнивание текста по центру */
+    background-color: #000;               /* Пример фона (можно изменить) */
+    
+}
+
+.about_us, .about_us_2{
+    display: flex;                        /* Используем flexbox для центрирования */
+    justify-content: center;              /* Центрируем содержимое по вертикали */
+    align-items: center;                  /* Центрируем содержимое по горизонтали */
+    text-align: left;   
+    padding: 15px 0 50px;    
+}
+.about_us_2 {
+   
+    padding: 50px 0 15px;  
+}
+.about_us_2_border {
+    border-right: 5px solid #336699;
+    margin: 0 0 20px;
+   
+    width: 100%;
+}
+.details {
+    background-color: #336699;
+    /*  Убираем flexbox, если он не нужен для чего-то конкретного */
+    display: flex;                        /* Используем flexbox для центрирования */
+    justify-content: center;              /* Центрируем содержимое по вертикали */
+    align-items: center;                  /* Центрируем содержимое по горизонтали */
+    text-align: left;   
+    padding: 50px 0 15px;
+    box-sizing: border-box; /* Гарантируем, что padding включается во внутренние размеры */
+}
+.details_image {
+    background-color: #336699;
+    /*  Убираем flexbox, если он не нужен для чего-то конкретного */
+    display: flex;                        /* Используем flexbox для центрирования */
+    justify-content: center;              /* Центрируем содержимое по вертикали */
+    align-items: center;                  /* Центрируем содержимое по горизонтали */
+    text-align: left;   
+    padding: 0 15px 40px;
+    box-sizing: border-box; /* Гарантируем, что padding включается во внутренние размеры */
+    /*  Убираем flexbox, если он не нужен для чего-то конкретного */
+   
+}
+.weapons_image{
+    display: flex;                        /* Используем flexbox для центрирования */
+    justify-content: center;              /* Центрируем содержимое по вертикали */
+    align-items: center;                  /* Центрируем содержимое по горизонтали */
+    text-align: left;   
+    padding: 0 15px 40px;
+    box-sizing: border-box; /* Гарантируем, что padding включается во внутренние размеры */
+    /*  Убираем flexbox, если он не нужен для чего-то конкретного */
+}
+/* Стили для внутреннего контента */
+.initial_heading_white {
+    color: white; /*  Цвет текста */
+    margin-bottom: 10px; /* Отступ снизу */
+    /* Другие стили для заголовка */
+}
+
+.about_us_text_white {
+    color: white; /* Цвет текста */
+    /* Другие стили для текста */
+}
+
+.details-centered-container {
+    width: 1110px;
+    height: 646px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(assets/images/wallpapersden.com_diluc-4k-genshin-impact_2560x1440.jpg);
+    
+    display: flex; /* Включаем Flexbox */
+    flex-direction: column; /* Размещаем элементы в колонну */
+    justify-content: flex-end; /* Прижимаем контент к нижнему краю */
+  
+  }
+  .weapons-centered-container{
+    width: 1110px;
+    height: 646px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(assets/images/ch.webp);
+    transition: background-image 0.3s ease;
+    display: flex; /* Включаем Flexbox */
+    flex-direction: column; /* Размещаем элементы в колонну */
+    justify-content: flex-end; /* Прижимаем контент к нижнему краю */
+  
+  }
+  .weapons-centered-container:hover{
+   
+    background-image: url(assets/images/i.webp);
+    transition: background-image 0.3s ease; /* Добавляем плавный переход для изменения изображения, если это необходимо */
+       
+  }
+
+
+  
+  .details-centered-text-container {
+    bottom: 0;
+    right: 0;
+  
+    padding: 20px 30px;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для текста */
+    color: white;
+    box-sizing: border-box;
+
+    display: flex; /* Включаем Flexbox */
+    justify-content: flex-end; /* Выравниваем контент по правому краю */
+    flex-direction: column; /* Размещаем элементы в колонну */
+    align-items: flex-end; /* Выравниваем элементы в колонке по правому краю */
+}
+
+.centered-container-main {
+    display: flex;                        /* Используем flexbox для центрирования */
+    flex-direction: column;               /* Выравнивание элементов по вертикали */
+    justify-content: center;               /* Центрируем по вертикали внутри контейнера */
+    align-items: center;                  /* Центрируем по горизонтали внутри контейнера */
+    text-align: center;                   /* Выравнивание текста по центру */
+    max-width: 800px;                     /* Максимальная ширина контейнера */
+    width: 100%;                          /* Ширина контейнера на 100% от родителя */
+    padding: 20px;                       /* Добавляем отступы при необходимости */
+    box-sizing: border-box;               /* Учёт padding в ширине */
+}
+
+.centered-container {
+    
+    max-width: 1140px; /* Ограничиваем максимальную ширину контента */
+    margin: 0 auto; /* Центрируем по горизонтали */
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .centered-container {
+        width: calc(100%); /* Две колонки в ряд на планшетах */
+    }
+}
+
+@media (max-width: 480px) {
+    .fcentered-container {
+        width: 100%; /* Одна колонка в ряд на мобильных */
+    }
+}
+
+
+
+.squads-containers {
+    display: flex;                         /* Используем flexbox для центрирования */
+    flex-direction: column;                /* Выравнивание элементов по вертикали */
+    justify-content: center;                /* Центрируем по вертикали внутри контейнера */
+    align-items: flex-start;               /* Выравнивание элементов по левому краю */
+    text-align: left;                      /* Выравнивание текста по левому краю */
+    max-width: 1140px;                    /* Максимальная ширина контейнера */
+    box-sizing: border-box;                /* Учёт padding в ширине */
+    
+}
+
+.about_us {
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center;       /* Центрирование по вертикали */
+}
+
+.image-container {
+    width: 540px;
+    height: 540px;
+    margin: 0 15px;
+    position: relative; /* Важно для позиционирования */
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        width: calc(100%); /* Две колонки в ряд на планшетах */
+        box-sizing: border-box; /*  Чтобы padding и border не ломали ширину */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-container {
+        width: calc(100%); /* Две колонки в ряд на планшетах */
+        box-sizing: border-box; /*  Чтобы padding и border не ломали ширину */
+    }
+}
+
+.about_us_image_wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative; /* Для позиционирования псевдоэлемента */
+}
+
+.about_us_image_character,
+.about_us_image_weapon {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease; /* Убираем filter из transition */
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    z-index: 1; /* Помещаем изображение под затемняющий слой и текст */
+}
+
+.about_us_image_character::before,
+.about_us_image_weapon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Прозрачный фон по умолчанию */
+    transition: background-color 0.3s ease; /* Плавный переход для затемнения */
+    z-index: 2; /* Помещаем затемняющий слой над изображением, но под текстом */
+}
+
+.about_us_image_character:hover::before,
+.about_us_image_weapon:hover::before {
+    background-color: rgba(0, 0, 0, 0.5); /* Затемнение при наведении */
+}
+
+.about_us_image_character:hover,
+.about_us_image_weapon:hover {
+    transform: scale(1.1); /* Увеличение изображения при наведении */
+    /* filter: brightness(0.5); */ /* Убираем filter здесь! */
+}
+
+.static-border {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-sizing: border-box;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;  /* Отображаем рамку поверх затемнения */
+}
+
+.image-container:hover .static-border {
+    opacity: 1;
+}
+
+/* Отдельные стили изображений */
+.about_us_image_character {
+    background-image: url(assets/images/Anbe-Yoshirou-Anime-Artist-artist-Genshin-Impact-Ero-7467533.png);
+}
+
+.about_us_image_weapon {
+    background-image: url(assets/images/20240829100659.png);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 4; /* Отображаем текст поверх всего */
+}
+
+.about_us_image_character:hover .image-overlay,
+.about_us_image_weapon:hover .image-overlay {
+    opacity: 1;
+}
+
+/* Стили для текста */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color:#fff ; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    
+    transition: opacity 0.3s ease;
+    font-weight: 400;                      /* Жирное начертание */
+    font-family: 'Roboto', sans-serif;     /* Шрифт Roboto */
+                   /* Белый цвет текста */
+    font-size: 24.5px;
+    text-transform: uppercase;
+}
+
+.about_us_image_character:hover .image-overlay,
+.about_us_image_weapon:hover .image-overlay {
+    opacity: 1;
+}
+
+
+.initial_heading-initial {
+    font-weight: 700;                      /* Жирное начертание */
+    font-family: 'Roboto', sans-serif;     /* Шрифт Roboto */
+    color: #fff;                      /* Белый цвет текста */
+    font-size: 28px;
+    
+    text-transform: uppercase;
+}
+.initial_heading_white {
+    font-weight: 700;                      /* Жирное начертание */
+    font-family: 'Roboto', sans-serif;     /* Шрифт Roboto */
+    font-size: 35px;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+}
+.initial_heading {
+    font-weight: 700;                      /* Жирное начертание */
+    font-family: 'Roboto', sans-serif;     /* Шрифт Roboto */
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #4A90E2; 
+    margin-bottom: 7px;
+}
+.initial_heading_21 {
+    font-weight: 700;                      /* Жирное начертание */
+    font-family: 'Roboto', sans-serif;     /* Шрифт Roboto */
+    font-size: 21px;
+    text-transform: uppercase;
+    color: #4A90E2; 
+    margin: 0;
+    text-align: center;
+    margin-bottom: 7px;
+
+}
+.initial {
+    /*  Убираем  анимацию с секции */
+}
+
+.initial-content {
+    opacity: 0;           /* Скрываем контент по умолчанию */
+    transform: translateY(50px); /* Сдвигаем контент вниз (для эффекта "выплывания") */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Плавный переход */
+}
+
+.initial.visible .initial-content { /* Применяем анимацию только к initial-content внутри видимой секции */
+    opacity: 1;           /* Делаем контент видимым */
+    transform: translateY(0); /* Возвращаем контент на исходную позицию */
+}
+
+/* Дополнительные стили для улучшения визуального эффекта */
+.centered-container-main {
+    /* Ваш код выравнивания по центру */
+    text-align: center; /* Например, центрируем текст внутри */
+}
+
+.heading_white{
+    color: #fff;
+}
+  
+
+.initial_heading_h6{
+    font-weight: 700;                      /* Жирное начертание */
+    font-family: 'Roboto', sans-serif;     /* Шрифт Roboto */
+    color: #336699;                       /* Белый цвет текста */
+    font-size: 14px;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
+.squads_h6 {
+    font-weight: 700;                      /* Жирное начертание */
+    font-family: 'Roboto', sans-serif;     /* Шрифт Roboto */
+    color: #336699;                       /* Белый цвет текста */
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.about_us_text, .about_us_text_white, .link-about_us_text_white{
+    font-family: 'Open Sans', sans-serif;  /* Шрифт Open Sans */
+    -webkit-font-smoothing: antialiased;   /* Устойчивость к размытиям текста */                   
+    text-align: left;
+    
+}
+.about_us_text {
+    color: #333;
+}
+.about_us_text_white {
+    color: #fff; 
+    font-size: 14px;
+}
+.link-about_us_text_white {
+    
+    font-size: 18px;
+    color: #fff; 
+}
+.squads {
+    display: flex;                        /* Используем flexbox для центрирования */
+    justify-content: center;              /* Центрируем содержимое по вертикали */
+    align-items: center;                  /* Центрируем содержимое по горизонтали */
+    text-align: left;   
+    padding: 15px 0 50px;
+    box-sizing: border-box;
+}
+.squads_text {
+    font-family: 'Open Sans', sans-serif;  /* Шрифт Open Sans */
+    -webkit-font-smoothing: antialiased;   /* Устойчивость к размытиям текста */                   
+    text-align: center;
+    font-size: 14px;
+}
+.text {
+    font-family: 'Open Sans', sans-serif;  /* Шрифт Open Sans */
+    -webkit-font-smoothing: antialiased;   /* Устойчивость к размытиям текста */
+    color: rgba(255, 255, 255, 0.7);                        /* Белый цвет текста */
+    text-align: center;
+    margin: 0 0 20px;
+    font-size: 14px;
+}
+
+.button-link {
+    display: inline-block;                   /* Отображение в виде блочного элемента */
+   
+    background-color: #336699;              /* Цвет заливки */
+    color: white; 
+    padding: 8px 35px;                           /* Цвет текста */
+    font-size: 15px;                         /* Размер шрифта */
+    border: none;                            /* Без рамки */
+    border-radius: 50px;              /* Закругление углов */
+    text-decoration: none;                   /* Без подчеркивания */
+    width: 62px;                            /* Ширина кнопки */
+    height: 23px;                           /* Высота кнопки */
+    text-align: center;                      /* Центрирование текста */
+    cursor: pointer;                         /* Курсор в виде указателя */
+    transition: background-color 0.3s;      /* Плавный переход при наведении */
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+
+.button-link:hover {
+    background-color: #1f5e9c;              /* Цвет на наведение */
+}
+
+
+
+
+.fill-first {
+    fill: rgba(0, 0, 0, 0); /* Прозрачный цвет (rgba, где a - альфа-канал) */
+    /*  fill: transparent;  // Можно использовать альтернативный вариант  */
+}
+
+.fill-second {
+    fill: #336699;                /* Синий цвет */
+}
+
+.fill-first, .fill-second, .fill-first-2, .fill-second-2, .fill-first-3, .fill-second-3{
+    margin: 0; /* Убираем margin */
+    padding: 0; /* Убираем padding */
+  }
+
+  .diagonal-divider {
+    width: 100%; /* Занимает всю доступную ширину */
+    height: 70px;  /* Устанавливаем желаемую высоту */
+}
+
+
+
+.fill-first-2 {
+    fill: #336699; 
+}
+
+.fill-second-2 {
+    fill: rgba(0, 0, 0, 0);             /* Синий цвет */
+}
+
+.fill-first-3 {
+    fill: #336699; 
+}
+.fill-second-3 {
+    fill: #14112c;
+}
+
+
+  
+
+  
+  svg {
+    margin: 0; /* Убираем margin */
+    padding: 0; /* Убираем padding */
+    display: block; /* Убираем вертикальный отступ, если есть */
+  }
+
+  .squads_container {
+    max-width: 255px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Добавлено! */
+}
+
+.squads_img {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 100%;
+    border: 1px dashed #336699;
+}
+
+.squads_containers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+
+.Artifacts {
+    background-color: #336699;
+    padding: 50px 0 15px;
+    box-sizing: border-box;
+    text-align: center; /* Центрируем контент внутри section (по умолчанию горизонтально) */
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;  /* Шрифт Open Sans */
+    -webkit-font-smoothing: antialiased;   /* Устойчивость к размытиям текста */                   
+    text-align: left;
+}
+
+.artifacts-grid {
+    display: grid;                       /* Используем Grid Layout для создания сетки */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Создаем адаптивную сетку */
+    gap: 20px;                          /* Добавляем отступ между элементами */
+}
+
+
+.Artifacts-conteiner {
+    
+    padding: 20px;           /* Добавляем отступы внутри контейнера */
+    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+}
+
+.image-artifact {
+    width: 240px;
+}
+
+
+footer {
+    background-color: #111; /* Темный фон */
+    color: #fff; /* Белый текст */
+    padding: 40px 0; /* Отступы сверху и снизу */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Разрешаем перенос на новую строку при необходимости */
+    justify-content: space-between; /* Равномерно распределяем колонки */
+    max-width: 1110px;  /* Ограничиваем максимальную ширину */
+    margin: 0 auto; /* Центрируем по горизонтали */
+    padding: 0 20px; /*  Отступы по бокам */
+}
+
+.footer-column {
+    width: calc(16.5% - 20px); /* Ширина колонок (четыре колонки), вычитаем margin */
+    margin-bottom: 20px; /* Отступ снизу между колонками */
+    box-sizing: border-box; /* Включаем padding в ширину элемента */
+}
+.footer-column:nth-child(1) {
+    width: calc(51.5%); /* Увеличиваем ширину первого столбца */
+}
+
+.footer-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Open Sans';
+}
+
+.footer-column p,
+.footer-column ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: 'Open Sans';
+    color: #bbb;
+}
+
+.footer-column ul {
+    list-style: none;  /* Убираем маркеры списка */
+    padding: 0;
+}
+
+.footer-column ul li a {
+   
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    
+    
+}
+
+/* Стили для иконок (если используете Font Awesome) */
+.fas { /*  Иконки, если используете Font Awesome */
+    margin-right: 5px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .footer-column {
+        width: calc(100%); /* Две колонки в ряд на планшетах */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-column {
+        width: 100%; /* Одна колонка в ряд на мобильных */
+    }
+}
+
+.step-by-step {
+    background-color: #14112c ; /* Темный фон */
+    color: #fff;
+    padding: 80px 0;  /* Отступы сверху и снизу */
+    text-align: center;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    color: #336699; /*  Более светлый цвет для WORK PROCESS */
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 2.5em;
+    font-family: 'Open Sans';
+    margin-bottom: 30px;
+}
+
+.section-description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-family: 'Open Sans';
+    color: #ccc;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Две колонки */
+    gap: 30px;  /* Отступ между шагами */
+    margin-bottom: 40px;
+    font-family: 'Open Sans';
+}
+
+.step-item {
+    background-color: #1d1a37; /* Темный фон для шагов */
+    padding: 30px;
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+    margin-bottom: 20px;
+    font-family: 'Open Sans';
+}
+
+.step-icon-wrapper {
+    width: 100px; /*  Размер круга с иконкой */
+    height: 100px;
+    border-radius: 50%;
+    background-color: #336699; /*  Цвет круга с иконкой */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    flex-shrink: 0; /*  Предотвращаем сжатие иконки */
+    
+    
+}
+
+.step-icon {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.step-content {
+    text-align: left; /*  Выравниваем текст по левому краю внутри шага */
+}
+
+.step-title {
+    font-size: 17.5px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+    color: #ccc;
+}
+
+.step-description {
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: 'Open Sans';
+    color: #ccc;
+
+}
+
+.button {
+    display: inline-block; /*  Чтобы задать padding */
+    background-color: #336699; /*  Цвет кнопки */
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #4277ad;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .steps-container {
+        grid-template-columns: 1fr; /*  Одна колонка на мобильных */
+    }
+    .step-item {
+        flex-direction: column;  /*  Складываем иконку и текст вертикально на мобильных */
+        text-align: center;
+    }
+    .step-icon-wrapper {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .step-content {
+        text-align: center;
+    }
+}
+
+.fa-bolt {  /*  Используем селектор класса  */
+    background-image: url(assets/images/Mavuika.webp);
+    /* Другие стили, например, размеры фона */
+    width: 100px;   /* Пример */
+    height: 100px;  /* Пример */
+    display: inline-block;  /*  Важно для отображения фона */
+    background-size: contain; /* Или cover, если нужно масштабировать изображение */
+    background-repeat: no-repeat; /*  Чтобы не повторять изображение */
+    border-radius: 100%;
+}
+
+.image-block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1140px; /* Ограничиваем ширину блока (два изображения по 540px + отступ) */
+    margin: 0 auto;
+}
+
+.image-block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.image-container {
+    width: 540px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .image {
+    transform: scale(1.1);
+    
+}
+
+.image-container:hover .image-overlay {
+    opacity: 1;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Стиль рамки (псевдоэлемент) */
+.image-container::after {
+    content: "";                   /*  Обязательно!  */
+    position: absolute;
+    top: 20px;                     /*  Отступ сверху */
+    left: 20px;                    /*  Отступ слева */
+    width: 500px;                  /*  Ширина рамки */
+    height: 500px;                 /*  Высота рамки */
+    border: 1px solid white;        /*  Стиль и цвет рамки */
+    opacity: 0;                    /*  Скрываем по умолчанию */
+    transition: opacity 0.3s ease; /*  Плавное появление */
+    pointer-events: none;          /*  Чтобы рамка не перехватывала события мыши */
+    box-sizing: border-box;         /*  Включить border в ширину и высоту */
+}
+
+.image-container:hover::after {
+    opacity: 1;                    /*  Показываем рамку при наведении */
+}
+
+/* Медиа-запросы (Адаптивность) */
+
+/* Большие экраны (desktop) - больше 1200px (обычно не требуется отдельный медиа-запрос, так как это базовые стили) */
+
+/* Medium-sized screens (например, большие планшеты, маленькие десктопы) */
+@media (max-width: 1140px) {
+    .image-block {
+        max-width: 100%;  /* Уменьшаем максимальную ширину блока */
+        justify-content: space-around;
+    }
+
+    .image-container {
+        width: 100%;      /* Уменьшаем ширину контейнера */
+        height: 540px;     /* Уменьшаем высоту контейнера */
+    }
+
+    .image-container::after {
+        width: calc(100% - 40px); /*  Рамка немного меньше контейнера (400px - 40px отступов) */
+        top: 20px;
+        left: 20px;
+
+    }
+}
+
+
+/* Меньшие планшеты и большие телефоны */
+@media (max-width: 992px) {
+    .image-block {
+        justify-content: space-around;
+        max-width: 100%;       /*  Ширина колонки (можно изменить) */
+    }
+
+    .image-container {
+        width: 90%;             /*  Изображения занимают 90% от колонки */
+        height: 540px;
+        margin-bottom: 20px;     /*  Отступ между изображениями в колонке */
+    }
+
+    .image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .image-container::after {
+        width: calc(100% - 40px);   /*  Рамка чуть меньше, чтобы не вылезать за края */
+        top: 20px;
+        left: 20px;
+
+    }
+}
+
+
+/* Мобильные телефоны (маленькие экраны) */
+@media (max-width: 768px) {
+    .image-block {
+        flex-direction: column; /*  Ставим изображения в колонку */
+        max-width: 510px; /* Занимает всю доступную ширину */
+    }
+    .image-container {
+        width: 90%;         /* Ещё немного уменьшаем ширину */
+        height: 540px;
+        margin-bottom: 15px; /*  Ещё уменьшаем отступ */
+    }
+    .image-container::after {
+        width: calc(100% - 40px); /*  Подстраиваем размер рамки */
+        top: 20px;
+        left: 20px;
+
+    }
+}
+
+/* Мобильные телефоны (маленькие экраны) */
+@media (max-width: 574px) {
+    .image-block {
+        flex-direction: column; /*  Ставим изображения в колонку */
+        max-width: 100%; /* Занимает всю доступную ширину */
+    }
+    .image-container {
+        width: 90%;         /* Ещё немного уменьшаем ширину */
+        height: 540px;
+        margin-bottom: 15px; /*  Ещё уменьшаем отступ */
+    }
+    .image-container::after {
+        width: calc(100% - 40px); /*  Подстраиваем размер рамки */
+        top: 20px;
+        left: 20px;
+
+    }
+}
+
+/* Самые маленькие телефоны (до 480px) */
+@media (max-width: 480px) {
+    .image-container {
+        width: 90%;        /* Ещё немного уменьшаем ширину */
+        height: 540px;
+        margin-bottom: 10px;  /* Ещё уменьшаем отступ */
+    }
+    .image-container::after {
+        width: calc(100% - 40px); /*  Подстраиваем размер рамки */
+       
+        top: 20px;
+        left: 20px;
+
+    }
+}
